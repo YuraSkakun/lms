@@ -1,0 +1,40 @@
+<!--   {% for teacher in teachers_list %}-->
+<!--        {{ teacher.id }}-->
+<!--        <a href="{% url 'teachers:edit' teacher.id %}">{{ teacher.first_name }}  {{ teacher.last_name }}</a>-->
+<!--        {{ teacher.email }}-->
+<!--        <br>-->
+<!--    {% empty %}-->
+<!--        <p>Sorry, list is empty</p>-->
+<!--    {% endfor %}-->
+
+{% if teachers_list %}
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Email</th>
+            <th>&#128397;</th>
+            <th>🗑</th>
+        </tr>
+      </thead>
+        {% for teacher in teachers_list %}
+            <tr>
+                <td> {{ teacher.id }} </td>
+                <td> {{ teacher.first_name }} </td>
+                <td> {{ teacher.last_name }} </td>
+                <td> {{ teacher.email }} </td>
+                <td> <a href="{% url 'teachers:edit' teacher.id %}">EDIT</a></td>
+                <td> <a href="{% url 'teachers:delete' teacher.id %}">DELETE</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+        <div class="p-1 m-1">
+            {% include 'includes/pagination.html' %}
+        </div>
+
+{% else %}
+    <p>Sorry, list is empty</p>
+{% endif %}

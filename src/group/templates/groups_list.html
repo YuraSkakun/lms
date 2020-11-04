@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--    <form>-->
+<!--      <label for="gname">Group name:</label><br>-->
+<!--      <input type="text" id="gname" name="gname"><br>-->
+<!--      <label for="gcourse">Group course:</label><br>-->
+<!--      <input type="text" id="gcourse" name="gcourse">-->
+<!--      <button type="submit">Search</button>-->
+<!--    </form>-->
+
+    <form>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Group name</span>
+          </div>
+          <input  name="gname" type="text" class="form-control" placeholder="Group name" aria-label="firstname" aria-describedby="basic-addon1">
+
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Group course</span>
+          </div>
+          <input  name="gcourse" type="text" class="form-control" placeholder="Group course" aria-label="lastname" aria-describedby="basic-addon1">
+
+          <button type="submit" class="btn btn-success">Search</button>
+        </div>
+    </form>
+
+
+
+<!--    {% for group in group_list %}-->
+<!--        {{ group.id }}-->
+<!--        <a href="/groups/edit/{{ group.id }}">{{ group.name }} {{ group.course }}</a>-->
+<!--        {{ group.classroom }}-->
+<!--        <br>-->
+<!--    {% empty %}-->
+<!--        <p>Sorry, list is empty</p>-->
+<!--    {% endfor %}-->
+
+    {% include 'includes/groups_table.html' %}
+
+{% endblock %}

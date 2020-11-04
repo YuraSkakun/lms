@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <form method="post">
+        {% csrf_token %}
+<!--        {{ form.as_p }}-->
+        {{ form|crispy }}
+
+      <button type="submit" class="btn btn-primary">Save</button>
+      <a href="{% url 'groups:list' %}" class="btn btn-light">Cancel</a>
+
+    </form>
+
+<!--    {% for student in group.students.all %}-->
+<!--        {{ student.id }}-->
+<!--        <a href="/students/edit/{{ student.id }}">{{ student.first_name }} {{ student.last_name }}</a>-->
+<!--        {{ student.email }}-->
+<!--        {{ group.name }}-->
+<!--        <a href="/students/delete/{{ student.id }}">Delete</a>-->
+<!--        <br>-->
+<!--    {% empty %}-->
+<!--        <p>Sorry, list is empty</p>-->
+<!--    {% endfor %}-->
+
+    <p></p>
+    <p></p>
+
+    {% with students_list=group.students.all %}
+        {% include 'includes/students_table.html' %}
+    {% endwith %}
+
+{% endblock %}

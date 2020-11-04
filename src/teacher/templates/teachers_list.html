@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--    <form>-->
+<!--        <label for="tfname">First name:</label><br>-->
+<!--        <input type="text" id="tfname" name="tfname"><br>-->
+<!--        <label for="tlname">Last name:</label><br>-->
+<!--        <input type="text" id="tlname" name="tlname"><br>-->
+<!--        <label for="email">Email:</label><br>-->
+<!--        <input type="text" id="email" name="email"><br>-->
+<!--        <button type="submit">Search</button>-->
+<!--    </form>-->
+
+    <form>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">First name</span>
+          </div>
+          <input  name="tfname" type="text" class="form-control" placeholder="First name" aria-label="firstname" aria-describedby="basic-addon1">
+
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Last name</span>
+          </div>
+          <input  name="tlname" type="text" class="form-control" placeholder="Last name" aria-label="lastname" aria-describedby="basic-addon1">
+
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Email</span>
+          </div>
+          <input  name="email" type="text" class="form-control" placeholder="Email" aria-label="lastname" aria-describedby="basic-addon1">
+
+          <button type="submit" class="btn btn-success">Search</button>
+        </div>
+    </form>
+
+    {% include 'includes/teachers_table.html' %}
+
+{% endblock %}

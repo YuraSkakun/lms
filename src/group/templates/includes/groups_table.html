@@ -1,0 +1,43 @@
+<!--    {% for group in groups_list %}-->
+<!--        {{ group.id }}-->
+<!--        <a href="{% url 'groups:edit' group.id %}">{{ group.name }} {{ group.course }}</a>-->
+<!--        {{ group.classroom }}-->
+<!--        <br>-->
+<!--    {% empty %}-->
+<!--        <p>Sorry, list is empty</p>-->
+<!--    {% endfor %}-->
+
+{% if groups_list %}
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Group name</th>
+                <th>Group course</th>
+                <th>Group classroom</th>
+                <th>Teacher</th>
+                <th>&#128397;</th>
+                <th>🗑</th>
+                </tr>
+        </thead>
+
+            {% for group in groups_list %}
+                <tr>
+                    <td> {{ group.id }} </td>
+                    <td> {{ group.name }} </td>
+                    <td> {{ group.course }} </td>
+                    <td> {{ group.classroom }} </td>
+                    <td> {{ group.teacher }} </td>
+                    <td> <a href="{% url 'groups:edit' group.id %}">EDIT</a> </td>
+                    <td> <a href="{% url 'groups:delete' group.id %}">DELETE</a> </td>
+                </tr>
+            {% endfor %}
+    </table>
+
+        <div class="p-1 m-1">
+            {% include 'includes/pagination.html' %}
+        </div>
+
+{% else %}
+    <p>Sorry, list is empty</p>
+{% endif %}

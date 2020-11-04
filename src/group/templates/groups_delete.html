@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form method="post">
+        {% csrf_token %}
+         <h3>
+             Do u really want to delete group <b> {{ group.name }} {{ group.course }}</b>?
+         </h3>
+      <button type="submit" class="btn btn-danger">Delete</button>
+      <a href="{% url 'groups:list' %}" class="btn btn-light">Cancel</a>
+    </form>
+
+{% endblock %}

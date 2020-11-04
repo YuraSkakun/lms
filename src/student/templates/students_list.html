@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<!--    <form>-->
+<!--      <label for="fname">First name:</label><br>-->
+<!--      <input type="text" id="fname" name="fname"><br>-->
+<!--      <label for="lname">Last name:</label><br>-->
+<!--      <input type="text" id="lname" name="lname">-->
+<!--      <button type="submit">Search</button>-->
+<!--    </form>-->
+
+    <form>
+
+     <div class="input-group mb-3">
+         <div class="input-group-prepend">
+             <span class="input-group-text" id="basic-addon1">First name</span>
+         </div>
+         <input name="fname" type="text" class="form-control" placeholder="First name" aria-label="firstname" aria-describedby="basic-addon1">
+
+         <div class="input-group-prepend">
+             <span class="input-group-text" id="basic-addon1">Last name</span>
+         </div>
+         <input name="lname" type="text" class="form-control" placeholder="Last name" aria-label="lastname" aria-describedby="basic-addon1">
+
+         <button type="submit" class="btn btn-success">Search</button>
+     </div>
+
+    </form>
+
+    {#{{ students_list|safe}}#}
+<!--    {% for student in students_list %}-->
+<!--        {{ student.id }}-->
+<!--        <a href="/students/edit/{{ student.id }}">{{ student.first_name }} {{ student.last_name }}</a>-->
+<!--        {{ student.email }}-->
+<!--        {{ student.group.name }}-->
+<!--        <a href="/students/delete/{{ student.id }}">Delete</a>-->
+<!--        <br>-->
+<!--    {% empty %}-->
+<!--        <p>Sorry, list is empty</p>-->
+<!--    {% endfor %}-->
+
+    {% include 'includes/students_table.html' %}
+
+{% endblock %}

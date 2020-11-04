@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+<h1>LMS</h1>
+<h3>{{ title }}</h3>
+
+    <a href="{% url 'students:list' %}">Students</a><br>
+    <a href="{% url 'teachers:list' %}">Teachers</a><br>
+    <a href="{% url 'groups:list' %}">Groups</a><br>
+
+{% block  content %}
+{% endblock %}
+
+</body>
+</html>
