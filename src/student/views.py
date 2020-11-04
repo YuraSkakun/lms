@@ -1,5 +1,3 @@
-from django.shortcuts import render
-
 # Create your views here.
 
 from urllib.parse import urlencode
@@ -156,11 +154,11 @@ class MyView:
     @classmethod
     def post(cls, request):
         print('post')
-        
+
     @classmethod
     def get(cls, request):
         print('get')
-        
+
     @classmethod
     def as_view(cls):
         def view(request):
