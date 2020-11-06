@@ -181,7 +181,7 @@ class StudentsListView(LoginRequiredMixin, ListView):
         request = self.request
         qs = super().get_queryset()
         qs = qs.select_related('group')
-        qs = qs.order_by('-gitid')
+        qs = qs.order_by('-id')
 
         if request.GET.get('fname'):
             qs = qs.filter(first_name=request.GET.get('fname'))
