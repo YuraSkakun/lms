@@ -199,12 +199,13 @@ class StudentsListView(LoginRequiredMixin, ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(object_list=None, **kwargs)
-        # params = self.request.GET
+        params = self.request.GET
 
         context['title'] = 'Student list'
-        # context['query_params'] = '&'.join(f'{k}={v}' for k, v in params.items() if k != 'page')
 
-        # context['query_params'] = urlencode({k: v for k, v in params.items() if k != 'page'})
+        # context['query_params'] = '&'.join(f'{k}={v}' for k, v in params.items() if k != 'page')
+        context['query_params'] = urlencode({k: v for k, v in params.items() if k != 'page'})
+
         return context
 
 
