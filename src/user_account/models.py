@@ -14,5 +14,7 @@ class UserAccountProfile(models.Model):
     )
     image = models.ImageField(default='default.jpg', upload_to='pics')
 
+    # MAX_IMAGE_SIZE = 300
+
     def __str__(self):
         return f'{self.user.first_name} {self.user.last_name} Profile'
