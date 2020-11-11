@@ -33,7 +33,8 @@
 {#            <li class="page-item">#}
 {#                <a class="page-link" href="?page={{ page_obj.next_page_number }}&{{ query_params }}"> >> </a>#}
 {#            </li>#}
-            <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}&{{ query_params }}">Last</a></li>
+<!--            <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}&{{ query_params }}">Last</a></li>-->
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}&{{ request.query_params }}">Last</a></li>
         {% endif %}
 
 
